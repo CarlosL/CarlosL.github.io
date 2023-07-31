@@ -369,12 +369,18 @@ section {
     main figure {
         float: none;
     }
+    nav ul a {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 500px) {
     main img {
         max-width: 300px;
         margin-left: 60%;
+    }
+    #portfolio h2 {
+        font-size: 20px;
     }
 }
 
