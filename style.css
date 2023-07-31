@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@200;300;600&family=IBM+Plex+Mono:wght@200;400;500&family=PT+Mono&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Handjet', cursive; */
+    /* font-family: 'IBM Plex Mono', monospace; */
+    /* font-family: 'Press Start 2P', cursive; */
+    /* font-family: 'PT Mono', monospace; */
+}
+
+:root {
+    --text-title: #e6e5e5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loader background */
+.container_loader {
+    background-color: #212121;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    transition: all 1.5s;
+}
+
+/* Loader style */
+.loader {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    font-size: 10vh;
+    margin: 45vh 30vw 45vh 30vw;
+    color: #dfdfdf;
+    letter-spacing: 5px;
+    position: relative;
+}
+  
+.loader::after {
+    content: 'Loading';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #263238;
+    text-shadow: 0 0 2px #FFF, 0 0 1px #FFF, 0 0 1px #FFF;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: animloader 2s linear infinite;
+}
+  
+@keyframes animloader {
+    0% {
+      height: 100%;
+    }
+  
+    100% {
+      height: 0%;
+    }
+}
+
+body {
+    cursor: url(img/pointers/cursor_1.png), auto;
+    overflow-x: hidden;
+}
+
+/* Scroll style */
+body::-webkit-scrollbar {
+    width: 2px;
+    background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+}
+
+a {
+    cursor: url(img/pointers/cursor_a.png), auto;
+}
+
+/* Header style */
+header {
+    width: 100%;
+    min-height: 95px;
+    background-color: black;
+}
+
+/* Typewriter style */
+.typewriter {
+    color: var(--text-title);
+    font-size: 60px;
+    font-weight: 600;
+    font-family: 'Handjet', cursive;
+    display: flex;
+}
+
+.typewriter .first-text {
+    margin: 10px 0 0 40px;
+}
+
+.typewriter .sec-text {
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.typewriter li {
+    list-style: none;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+
+.typewriter li span {
+    position: relative;
+}
+
+/* Typewriter animation */
+.typewriter li span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 80px;
+    background: black;
+    border-left: 3px solid var(--text-title);
+    animation: typing 1.5s steps(15) infinite alternate;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+/* Navigation style */
+nav {
+    width: 100%;
+    min-height: 45px;
+    background-color: var(--text-title);
+    font-family: 'PT Mono', monospace;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+nav ul a {
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+    padding: 11px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    transition: .5s;
+}
+
+ /* link hover style */
+nav ul a:hover, nav ul a:focus {
+    background-color: black;
+    color: var(--text-title);
+}
+
+/* Main style */
+main {
+    font-family: 'IBM Plex Mono', monospace;
+    position: relative;
+    overflow: hidden;
+    color: rgb(8, 8, 8);
+    min-height: 40vh;
+}
+
+/* Scramble style */
+main .scramble {
+    font-size: 30px;
+    display: flex;
+}
+
+.dud {
+    color: black;
+}
+
+/* Main text style */
+main p {
+    margin: 60px 0 20px 40px;
+    position: relative;  
+}
+
+main .t_second {
+    margin-left: 60px;
+}
+
+/* Typewriter_1 */
+.typewriter_1 {
+    position: absolute;
+    right: 0;
+    width: 0;
+    background-color: white;
+    border-left: 0px solid rgb(255, 255, 255);
+    animation: machine 5s;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes machine {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+/* Main img */
+main figure {
+    float: right;
+    margin-bottom: -4px;
+}
+
+section {
+    width: 100%;
+}
+
+/* Section style */
+#about {
+    min-height: 40vh;
+    background-color: var(--text-title);
+}
+
+#about h2 {
+    font-family: 'Press Start 2P', cursive;
+    padding: 40px;
+}
+
+/* li position and style */
+#about .column {
+    font-family: 'IBM Plex Mono', monospace;
+    list-style: none;
+    column-count: 3;
+    column-gap: 10px;
+    margin: 30px 0 0 40px;
+    padding-bottom: 50px;
+}
+
+/* list style */
+.container_list span {
+    font-family: 'Handjet', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+/* Portfolio section */
+#portfolio {
+    min-height: 100vh;
+    background-color: black;
+}
+
+#portfolio h2 {
+    color: var(--text-title);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    padding: 100px 35% 100px 35%;
+}
+
+#portfolio .card_1 {
+    padding: 12% 10% 10% 15%;
+}
+
+#portfolio .card_2 {
+    padding: 20% 15% 15% 40%;
+}
+
+#portfolio video {
+    width: 580px;
+    border-radius: 20px;
+}
+
+@media (max-width: 1000px) {
+    #portfolio .card_1 {
+        padding: 12% 10% 10% 10%;
+    }
+    #portfolio .card_2 {
+        padding: 20% 15% 10% 30%;
+    }
+}
+
+@media (max-width: 935px) {
+    main p {
+        margin: 20px 0 10px 20px;
+    }
+}
+
+@media (max-width: 880px) {
+    #portfolio .card_1 {
+        padding-left: 5%;
+    }
+    #portfolio .card_2 {
+        padding: 20% 20% 10% 20%;
+    }
+    #portfolio h2 {
+        padding: 100px 25% 100px 25%;
+    }
+}
+
+@media (max-width: 824px) {
+    main figure {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 780px) {
+    #portfolio .card_1 {
+        padding: 12% 3% 10% 3%;
+    }
+    #portfolio .card_2 {
+        padding: 20% 5% 10% 15%;
+    }
+}
+
+@media (max-width: 720px) {
+    main figure {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    #portfolio .card_1 {
+        padding: 15% 8% 15% 8%;
+    }
+    #portfolio .card_2 {
+        padding: 20% 8% 10% 8%;
+    }
+    #portfolio video {
+        width: 100%;
+    }
+    #portfolio h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 620px) {
+    main p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 572px) {
+    #portfolio h2 {
+        font-size: 30px;
+    }
+    main .t_second {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    main figure {
+        float: none;
+    }
+}
+
+@media (max-width: 500px) {
+    main img {
+        max-width: 300px;
+        margin-left: 60%;
+    }
+}
+
+@media (max-width: 440px) {
+    main img {
+        margin-left: 40%;
+    }
+}
+
+@media (max-width: 380px) {
+    main img {
+        margin-left: 26%;
+    }
+}
